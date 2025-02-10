@@ -168,7 +168,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-white border-white hover:bg-white hover:text-secondary"
+                 className="bg-secondary text-white border-white hover:bg-white hover:text-secondary"
                 >
                   Contact Us
                 </Button>

@@ -1,7 +1,9 @@
 "use client"
 import Image from "next/image"
 import { PageHero } from "@/components/page-hero"
+import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import Link from "next/link"
 
 interface TeamMember {
   name: string
@@ -91,6 +93,33 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+      {/* CTA Section */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
+            <p className="text-lg mb-8 opacity-90">
+              Join our program and become part of a growing community of scholars and practitioners in European Studies.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <Link href="/courses">
+                <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90">
+                  Explore Courses
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                 className="bg-secondary text-white border-white hover:bg-white hover:text-secondary"
+                >
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
@@ -130,6 +159,7 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
         </div>
       </DialogContent>
     </Dialog>
+    
   )
 }
 
