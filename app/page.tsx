@@ -8,11 +8,11 @@ export default function HomePage() {
     <div>
       {/* Hero Section */}
       <section className="relative bg-secondary text-white py-32">
-        <div className="absolute inset-0 bg-[url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-0stcEtQUKgfc6JubcQM7Qri1L1XArR.png')] bg-no-repeat bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/LOGO2.png')] bg-no-repeat bg-center opacity-10"></div>
         <div className="container mx-auto px-4 relative">
           <div className="flex flex-col items-center text-center">
             <img
-              src="./LOGO2.png"
+              src="./logo.png"
               alt="EU4SALONE Logo"
               className="h-48 w-auto mb-8"
             />

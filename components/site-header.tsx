@@ -30,8 +30,8 @@ export function SiteHeader() {
             />
             <div>
               <h1 className="text-lg font-bold text-secondary">EU4Salone</h1>
-              <p className="text-xs text-gray-600 hidden md:block">European Studies in Sierra Leone</p>
-              <p className="text-xs text-gray-600 md:hidden">EU4SL, FBC</p>
+              <p className="text-xs text-gray-600 hidden md:block">We Educate to Transform Lives</p>
+              <p className="text-xs text-gray-600 md:hidden">We Educate to Transform Lives</p>
             </div>
           </Link>
         </div>
