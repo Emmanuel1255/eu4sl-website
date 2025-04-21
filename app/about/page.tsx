@@ -1,9 +1,8 @@
 "use client"
+
 import Image from "next/image"
 import { PageHero } from "@/components/page-hero"
-import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import Link from "next/link"
 
 interface TeamMember {
   name: string
@@ -19,27 +18,7 @@ const teamMembers: TeamMember[] = [
     role: "Academic coordinator",
     department: "Department of Political Science",
     image: "/placeholder.svg?height=200&width=200",
-    bio: `Kаmаrа Mоhаmed Fоrаy, PhD in Pоliticаl Ecоnоmics, is а trаined аnd quаlified Ecоnоmist аnd а trаined аnd quаlified Pоliticаl
-Scientist. He is а speciаlist in the teаching оf Ecоnоmic Histоry оf
-Sierrа Leоne in the depаrtment оf Ecоnоmics аnd Mоdern Pоliticаl
-Thоught, Imperiаlism аnd Nаtiоnаlism in the depаrtment оf Pоliticаl
-Science, Fоurаh Bаy Cоllege, University оf Sierrа Leоne аt
-undergrаduаte level. He аlsо teаches Internаtiоnаl Оrgаnizаtiоns аs
-а mоdule fоr MSc students оf Diplоmаcy аnd Internаtiоnаl Relаtiоns
-аnd Regiоnаl аnd Internаtiоnаl Security аs а mоdule fоr MSc
-students оf Security Strаtegic аnd Develоpment Studies.
-Dr Fоrаy hаs knоwledge in lаnd pоlicy issues аnd refоrm prоcesses
-in Sierrа Leоne, with аbility tо wоrk independently аnd in а teаm
-envirоnment, аs the cаse mаy be. He hаs а prоven trаck recоrd оf delivering excellent оutputs оn а continuоus bаsis whilst аdhering tо
-deаdlines аnd quаlity guidelines, including develоpment оf wоrking
-dоcuments fоr technicаl wоrking grоups, steering cоmmittee
-members аnd drаfting cоmprehensive repоrts, using stаndаrd
-repоrting fоrmаt. Dr Fоrаy hаs very gооd mаnаgeriаl skills аcquired
-thrоugh wоrk experience аs heаd оf the Nаtiоnаl Lаnd Pоlicy
-Refоrm Prоject in Sierrа Leоne. He is very pаssiоnаte tо succeed
-оn the prоfessiоnаl frоnt thrоugh cоntinuоus leаrning аnd
-imprоvement, including very gооd оrаl аnd written cоmmunicаtiоn
-skills in English.`,
+    bio: `Kamara Mohamed Foray, PhD in Political Economics, is a trained and qualified Economist and a trained and qualified Political Scientist. He is a specialist in the teaching of Economic History of Sierra Leone in the department of Economics and Modern Political Thought, Imperialism and Nationalism in the department of Political Science, Fourah Bay College, University of Sierra Leone at undergraduate level. He also teaches International Organizations as a module for MSc students of Diplomacy and International Relations and Regional and International Security as a module for MSc students of Security Strategic and Development Studies. Dr Foray has knowledge in land policy issues and reform processes in Sierra Leone, with ability to work independently and in a team environment, as the case may be. He has a proven track record of delivering excellent outputs on a continuous basis whilst adhering to deadlines and quality guidelines, including development of working documents for technical working groups, steering committee members and drafting comprehensive reports, using standard reporting format. Dr Foray has very good managerial skills acquired through work experience as head of the National Land Policy Reform Project in Sierra Leone. He is very passionate to succeed on the professional front through continuous learning and improvement, including very good oral and written communication skills in English.`,
   },
   {
     name: "Dr. Idrissa Mamoud Tarawallie",
@@ -67,11 +46,11 @@ export default function AboutPage() {
             <div className="prose max-w-none">
               <p className="mb-6 text-lg text-gray-700">
                 The EU4SL project, "European Interdisciplinary Studies in Sierra Leone," aims to establish an
-                interdisciplinary module in European studies аt the University оf Sierrа Leоne. This initiаtive is pаrticulаrly
-                relevаnt tо the Mаster's prоgrаm in "Internаtiоnаl Relаtiоns," but its cоurses will аlsо be аccessible tо
-                students frоm оther disciplines within the University оf Sierrа Leоne's sоciаl sciences prоgrаms. The
-                multidisciplinаry nаture оf EU4SL will аllоw students frоm vаriоus speciаlizаtiоns (pоlitics, ecоnоmics,
-                pоliticаl philоsоphy, regiоnаl studies, cоmmunicаtiоn studies etc.) tо pаrticipаte.
+                interdisciplinary module in European studies at the University of Sierra Leone. This initiative is particularly
+                relevant to the Master's program in "International Relations," but its courses will also be accessible to
+                students from other disciplines within the University of Sierra Leone's social sciences programs. The
+                multidisciplinary nature of EU4SL will allow students from various specializations (politics, economics,
+                political philosophy, regional studies, communication studies etc.) to participate.
               </p>
 
               <h2 className="mt-8 mb-4 text-2xl font-bold text-primary">Our Objectives</h2>
@@ -93,8 +72,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      {/* CTA Section */}
-      
     </div>
   )
 }
@@ -103,38 +80,42 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="p-4 transition-all border border-gray-200 rounded-lg cursor-pointer bg-gray-50 hover:shadow-md">
-          <Image
-            src={member.image || "/placeholder.svg"}
-            alt={member.name}
-            width={200}
-            height={200}
-            className="object-cover w-full h-48 mb-4 rounded-md"
-          />
-          <h3 className="font-semibold text-secondary">{member.name}</h3>
-          <p className="text-sm text-gray-600">{member.role}</p>
-          <p className="text-sm text-gray-500">{member.department}</p>
+        <div className="flex flex-col items-center p-4 transition-all border border-gray-200 rounded-lg cursor-pointer bg-gray-50 hover:shadow-md hover:border-primary group">
+          <div className="w-full h-48 overflow-hidden rounded-md">
+            <Image
+              src={member.image || "/placeholder.svg"}
+              alt={member.name}
+              width={300}
+              height={300}
+              className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+            />
+          </div>
+          <div className="mt-4 text-center">
+            <h3 className="text-lg font-semibold text-secondary">{member.name}</h3>
+            <p className="text-sm text-gray-600">{member.role}</p>
+            <p className="text-sm text-gray-500">{member.department}</p>
+          </div>
         </div>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="max-w-2xl">
         <DialogHeader>
-          <DialogTitle>{member.name}</DialogTitle>
+          <DialogTitle className="text-xl font-semibold text-primary">{member.name}</DialogTitle>
         </DialogHeader>
-        <div className="mt-4">
-          <Image
-            src={member.image || "/placeholder.svg"}
-            alt={member.name}
-            width={200}
-            height={200}
-            className="object-cover w-full h-48 mb-4 rounded-md"
-          />
-          <p className="text-sm text-gray-600">{member.role}</p>
+        <div className="overflow-y-auto max-h-[70vh]">
+          <div className="w-full mb-4 overflow-hidden rounded-md">
+            <Image
+              src={member.image || "/placeholder.svg"}
+              alt={member.name}
+              width={400}
+              height={400}
+              className="object-cover w-full h-60"
+            />
+          </div>
+          <p className="text-sm font-medium text-gray-700">{member.role}</p>
           <p className="mb-4 text-sm text-gray-500">{member.department}</p>
-          <p className="text-gray-700">{member.bio}</p>
+          <p className="text-sm text-gray-600 whitespace-pre-line">{member.bio}</p>
         </div>
       </DialogContent>
     </Dialog>
-    
   )
 }
-
