@@ -10,8 +10,7 @@ interface SEOProps {
 export function SEO({ title, description, canonical, ogImage }: SEOProps) {
   const siteTitle = "EU4SL - European Studies in Sierra Leone"
   const fullTitle = `${title} | ${siteTitle}`
-  const defaultOgImage = "https://eu4sl.edu.sl/og-image.jpg" // Replace with your actual default OG image URL
-
+  const defaultOgImage = "https://eu4sl.edu.sl/og-image.jpg" 
   return (
     <Head>
       <title>{fullTitle}</title>

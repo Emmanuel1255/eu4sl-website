@@ -62,10 +62,10 @@ export default function AboutPage() {
     <div>
       <PageHero title="About EU4SL" breadcrumbs={[{ label: "About", href: "/about" }]} />
       <div className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
+        <div className="container px-4 mx-auto">
+          <div className="p-8 bg-white border border-gray-200 rounded-lg shadow-md">
             <div className="prose max-w-none">
-              <p className="text-lg mb-6 text-gray-700">
+              <p className="mb-6 text-lg text-gray-700">
                 The EU4SL project, "European Interdisciplinary Studies in Sierra Leone," aims to establish an
                 interdisciplinary module in European studies аt the University оf Sierrа Leоne. This initiаtive is pаrticulаrly
                 relevаnt tо the Mаster's prоgrаm in "Internаtiоnаl Relаtiоns," but its cоurses will аlsо be аccessible tо
@@ -74,8 +74,8 @@ export default function AboutPage() {
                 pоliticаl philоsоphy, regiоnаl studies, cоmmunicаtiоn studies etc.) tо pаrticipаte.
               </p>
 
-              <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Our Objectives</h2>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <h2 className="mt-8 mb-4 text-2xl font-bold text-primary">Our Objectives</h2>
+              <ul className="pl-6 space-y-2 text-gray-700 list-disc">
                 <li>Enhance knowledge about the European Union in Sierra Leone</li>
                 <li>Improve teaching methods and education quality regarding European integration</li>
                 <li>Foster research activities in European studies</li>
@@ -83,8 +83,8 @@ export default function AboutPage() {
                 <li>Encourage the adoption of European educational experiences and practices</li>
               </ul>
 
-              <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">Our Team</h2>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
+              <h2 className="mt-8 mb-4 text-2xl font-bold text-primary">Our Team</h2>
+              <div className="grid gap-6 mt-6 md:grid-cols-2 lg:grid-cols-3">
                 {teamMembers.map((member, index) => (
                   <TeamMemberCard key={index} member={member} />
                 ))}
@@ -94,32 +94,7 @@ export default function AboutPage() {
         </div>
       </div>
       {/* CTA Section */}
-      <section className="py-20 bg-secondary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
-            <p className="text-lg mb-8 opacity-90">
-              Join our program and become part of a growing community of scholars and practitioners in European Studies.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <Link href="/courses">
-                <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90">
-                  Explore Courses
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                 className="bg-secondary text-white border-white hover:bg-white hover:text-secondary"
-                >
-                  Contact Us
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   )
 }
@@ -128,13 +103,13 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 transition-all hover:shadow-md cursor-pointer">
+        <div className="p-4 transition-all border border-gray-200 rounded-lg cursor-pointer bg-gray-50 hover:shadow-md">
           <Image
             src={member.image || "/placeholder.svg"}
             alt={member.name}
             width={200}
             height={200}
-            className="w-full h-48 object-cover rounded-md mb-4"
+            className="object-cover w-full h-48 mb-4 rounded-md"
           />
           <h3 className="font-semibold text-secondary">{member.name}</h3>
           <p className="text-sm text-gray-600">{member.role}</p>
@@ -151,10 +126,10 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
             alt={member.name}
             width={200}
             height={200}
-            className="w-full h-48 object-cover rounded-md mb-4"
+            className="object-cover w-full h-48 mb-4 rounded-md"
           />
           <p className="text-sm text-gray-600">{member.role}</p>
-          <p className="text-sm text-gray-500 mb-4">{member.department}</p>
+          <p className="mb-4 text-sm text-gray-500">{member.department}</p>
           <p className="text-gray-700">{member.bio}</p>
         </div>
       </DialogContent>
